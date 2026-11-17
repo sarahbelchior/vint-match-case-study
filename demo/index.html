@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#100b1f">
+  <meta name="description" content="Demonstração didática do ranking conceitual VINT Match com dados fictícios.">
+  <title>VINT Match — Demo pública de ranking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#resultados">Pular para os resultados</a>
+  <div class="shell">
+    <header class="topbar"><div class="brand"><span class="logo" aria-hidden="true">✦</span><strong>VINT<span>Match</span></strong><small>DEMO</small></div><a class="github" href="https://github.com/sarahbelchior/vint-match-case-study">Repositório ↗</a></header>
+    <main>
+      <section class="hero">
+        <div class="kicker">HACKATHON VINT + INBEC · 2026</div>
+        <h1>Encontre o perfil certo.<br><em>Entenda a recomendação.</em></h1>
+        <p>Exemplo público do conceito de ranking apresentado no hackathon. Ajuste a demanda, compare perfis fictícios e acompanhe as justificativas.</p>
+        <p class="warning">Demonstração independente. Não usa bases da VINT_GLOBAL, não possui IA e não representa o produto original.</p>
+      </section>
+      <div class="layout">
+        <section class="panel form-panel" aria-labelledby="req-title">
+          <div class="panel-heading"><div><p class="eyebrow">PASSO 01</p><h2 id="req-title">Descreva a demanda</h2></div><span class="step">Briefing</span></div>
+          <form id="form">
+            <label for="skills">Competências desejadas</label>
+            <input id="skills" name="skills" value="Node.js, AWS" placeholder="Ex.: Node.js, AWS" required>
+            <p class="help">Separe por vírgulas.</p>
+            <div class="fields">
+              <div><label for="level">Nível</label><select id="level" name="level"><option value="all">Qualquer nível</option><option value="sênior" selected>Sênior</option><option value="pleno">Pleno</option><option value="júnior">Júnior</option></select></div>
+              <div><label for="availability">Disponibilidade mínima</label><select id="availability" name="availability"><option value="25">25%</option><option value="50" selected>50%</option><option value="75">75%</option><option value="100">100%</option></select></div>
+            </div>
+            <label for="months">Período necessário</label><select id="months" name="months"><option value="1">1 mês</option><option value="2">2 meses</option><option value="3" selected>3 meses</option><option value="4">4 meses</option><option value="6">6 meses</option></select>
+            <button class="primary" type="submit">Comparar perfis fictícios <span aria-hidden="true">→</span></button>
+          </form>
+          <hr>
+          <p class="eyebrow">PESOS DO MODELO DIDÁTICO</p>
+          <div class="weights" aria-label="Critérios de pontuação"><div><span>Competências</span><b>40%</b></div><div><span>Disponibilidade</span><b>25%</b></div><div><span>Histórico</span><b>20%</b></div><div><span>Aderência</span><b>15%</b></div></div>
+          <p class="help">Pesos extraídos do relatório do hackathon. A lógica simplificada deste exemplo é ilustrativa, não validada em recrutamento.</p>
+        </section>
+        <section class="results" id="resultados" aria-labelledby="results-title">
+          <div class="results-head"><div><p class="eyebrow">PASSO 02</p><h2 id="results-title">Perfis compatíveis</h2></div><span id="result-count" class="result-count" aria-live="polite">—</span></div>
+          <div class="results-list" id="results-list" aria-live="polite"></div>
+          <p class="disclaimer">Decisões sobre pessoas devem envolver avaliação humana, critérios justos e validação das informações. Este exemplo não avalia candidatos reais.</p>
+        </section>
+      </div>
+    </main>
+    <footer>Exemplo educacional de portfólio · Sarah Belchior · Não é um sistema da VINT_GLOBAL.</footer>
+  </div>
+  <script src="scoring.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
